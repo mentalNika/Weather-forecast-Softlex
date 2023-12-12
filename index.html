@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Softlex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <h1><a href="/">Прогноз погоды</a></h1>
+          </li>
+          <li><a href="about-us.html">О нас</a></li>
+          <li><a href="settings.html">Настройки</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="swup" class="transition-fade container">
+      <select name="Список городов" id="">
+        <option value="1">Москва</option>
+        <option value="2">Санкт-Петербург</option>
+        <option value="3">Ростов-на-Дону</option>
+      </select>
+
+      <div class="weather-input">
+        <h3>Введите название города</h3>
+        <input class="city-input" type="text" placeholder="Москва" />
+        <button class="search-btn">Найти</button>
+
+        <div class="weather-data">
+          <div class="current-weather">
+            <div class="details">
+              <h2>Лондон 2023-06-19</h2>
+              <p>Температура: 19°C</p>
+              <p>Ветер: 4 м/с</p>
+              <p>Влажность: 70%</p>
+            </div>
+            <div class="icon">
+              <img
+                src="https://openweathermap.org/img/wn/10d@4x.png"
+                alt="иконка погоды"
+              />
+              <p>Дождь</p>
+            </div>
+          </div>
+          <div class="days-forecast">
+            <h2>Прогноз погоды на 5 дней</h2>
+            <ul class="weather-cards">
+              <li class="card">
+                <h3>2023-06-19</h3>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@4x.png"
+                  alt="иконка погоды"
+                />
+                <p>Темп: 19°C</p>
+                <p>Ветер: 4 м/с</p>
+                <p>Влажность: 70%</p>
+              </li>
+              <li class="card">
+                <h3>2023-06-19</h3>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@4x.png"
+                  alt="иконка погоды"
+                />
+                <p>Темп: 19°C</p>
+                <p>Ветер: 4 м/с</p>
+                <p>Влажность: 70%</p>
+              </li>
+              <li class="card">
+                <h3>2023-06-19</h3>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@4x.png"
+                  alt="иконка погоды"
+                />
+                <p>Темп: 19°C</p>
+                <p>Ветер: 4 м/с</p>
+                <p>Влажность: 70%</p>
+              </li>
+              <li class="card">
+                <h3>2023-06-19</h3>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@4x.png"
+                  alt="иконка погоды"
+                />
+                <p>Темп: 19°C</p>
+                <p>Ветер: 4 м/с</p>
+                <p>Влажность: 70%</p>
+              </li>
+              <li class="card">
+                <h3>2023-06-19</h3>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@4x.png"
+                  alt="иконка погоды"
+                />
+                <p>Темп: 19°C</p>
+                <p>Ветер: 4 м/с</p>
+                <p>Влажность: 70%</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module">
+      import Swup from "https://unpkg.com/swup@4?module";
+      const swup = new Swup();
+    </script>
+    <script src="index.js" defer></script>
+  </body>
+</html>
