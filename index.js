@@ -2,7 +2,8 @@ const cityInput = document.querySelector(".city-input");
 const searchButton = document.querySelector(".search-btn");
 const currentWeatherDiv = document.querySelector(".current-weather");
 const weatherCardsDiv = document.querySelector(".weather-cards");
-const API_KEY = "adf4671e71150cb5760619e2712cf111"; // API key for OpenWeatherMap API
+
+const API_KEY = "adf4671e71150cb5760619e2712cf111"; // ключ OpenWeatherMap API
 const createWeatherCard = (cityName, weatherItem, index) => {
   if (index === 0) {
     // HTML для главной погодной карточки
@@ -36,7 +37,7 @@ const createWeatherCard = (cityName, weatherItem, index) => {
   }
 };
 const getWeatherDetails = (cityName, latitude, longitude) => {
-  const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&lang=ru`;
+  const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
   fetch(WEATHER_API_URL)
     .then((response) => response.json())
     .then((data) => {
@@ -66,16 +67,14 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
       alert("An error occurred while fetching the weather forecast!");
     });
 };
-const getCityCoordinates = () => {
-  const cityName = cityInput.value.trim();
-  if (cityName === "") return;
-  const API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}&lang=ru`;
+const getCityCoordinates = (cityName) => {
+  const API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
   // Get entered city coordinates (latitude, longitude, and name) from the API response
   fetch(API_URL)
     .then((response) => response.json())
     .then((data) => {
-      if (!data.length) return alert(`No coordinates found for ${cityName}`);
+      if (!data.length) return alert(`Город ${cityName} не найден`);
       const { lat, lon, name } = data[0];
       getWeatherDetails(name, lat, lon);
     })
@@ -84,12 +83,36 @@ const getCityCoordinates = () => {
     });
 };
 
-searchButton.addEventListener("click", getCityCoordinates);
-cityInput.addEventListener(
-  "keyup",
-  (e) => e.key === "Enter" && getCityCoordinates()
-);
+// При открытии сайта отображается погода в Москве
+getCityCoordinates("Москва");
 
-// createWeatherCard(Москва);
-// getWeatherDetails(Москва);
-// getCityCoordinates(Москва);
+// Обработчики событий для кнопок городов
+const moscowButton = document.querySelector("#moscow");
+const stPetersburgButton = document.querySelector("#stPetersburg");
+const rostovButton = document.querySelector("#rostov");
+
+moscowButton.addEventListener("click", () => {
+  getCityCoordinates("Москва");
+});
+
+stPetersburgButton.addEventListener("click", () => {
+  getCityCoordinates("Санкт-Петербург");
+});
+
+rostovButton.addEventListener("click", () => {
+  getCityCoordinates("Ростов-на-Дону");
+});
+
+searchButton.addEventListener("click", () => {
+  const cityName = cityInput.value.trim();
+  if (cityName === "") return;
+  getCityCoordinates(cityName);
+});
+
+cityInput.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    const cityName = cityInput.value.trim();
+    if (cityName === "") return;
+    getCityCoordinates(cityName);
+  }
+});
