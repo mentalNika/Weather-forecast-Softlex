@@ -34,8 +34,13 @@
 
       <div class="weather-input">
         <h3>Введите название города</h3>
-        <input class="city-input" type="text" placeholder="Москва" />
-        <button class="search-btn">Найти</button>
+        <input
+          class="city-input"
+          type="text"
+          placeholder="Москва"
+          value="Москва"
+        />
+        <button class="search-btn" value="Москва">Найти</button>
 
         <div class="weather-data">
           <div class="current-weather">
@@ -108,6 +113,6 @@
       import Swup from "https://unpkg.com/swup@4?module";
       const swup = new Swup();
     </script>
-    <script src="index.js" defer></script>
+    <script src="index.js"></script>
   </body>
 </html>
