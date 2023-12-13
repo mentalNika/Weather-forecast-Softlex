@@ -31,7 +31,6 @@ html.is-animating .transition-fade {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(239, 252, 249);
   border-radius: 40px 40px 0 0;
 }
 
@@ -156,6 +155,18 @@ html.is-animating .transition-fade {
   font-family: "Nunito", Arial, Helvetica, sans-serif;
   font-size: 25px;
   font-weight: 600;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.toogle-btn {
+  padding: 10px;
+  background-color: rgb(84, 152, 155);
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #fff;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -201,11 +212,86 @@ html.is-animating .transition-fade {
   border-radius: 20px;
 }
 
+/* Темная тема */
 .dark-theme {
   color: #fff;
   background: #000;
+
+  a {
+    color: #fff;
+  }
+
+  main {
+    background: #000;
+    color: #fff;
+  }
+
+  .card,
+  .dropbtn,
+  .enter-data__btn,
+  .toogle-btn {
+    background-color: grey;
+  }
+
+  .dropbtn:hover,
+  .enter-data__btn:hover,
+  .toogle-btn:hover {
+    background-color: rgb(92, 92, 92);
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: rgb(61, 61, 61);
+  }
+
+  .dropdown-content button:hover {
+    background-color: rgb(161, 161, 161);
+  }
 }
 
-.dark-theme a {
-  color: #fff;
+@media screen and (max-width: 1024px) {
+  .header__list {
+    margin-top: 10px;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px 40px 0 0;
+  }
+
+  .header__link {
+    display: block;
+    color: #000;
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  .header__link:hover {
+    color: rgb(98, 170, 175);
+    border: none;
+  }
+
+  .content {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .dropbtn {
+    background-color: rgb(96, 174, 176);
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: 600;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    margin: 0;
+    width: 100%;
+  }
+
+  .dropdown {
+    margin-bottom: 180px;
+  }
 }

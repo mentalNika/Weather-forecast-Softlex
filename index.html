@@ -62,20 +62,24 @@
     <main id="swup" class="transition-fade container">
       <div class="content">
         <div class="dropdown">
-          <button class="dropbtn">Список городов</button>
+          <button class="dropbtn">List of cities</button>
           <div class="dropdown-content">
             <button class="dropdown__city-btn" id="moscow">Moscow</button>
-            <button class="dropdown__city-btn" id="stPetersburg">Saint Petersburg</button>
-            <button class="dropdown__city-btn" id="rostov">Rostov-On-Dov</button>
+            <button class="dropdown__city-btn" id="stPetersburg">
+              Saint Petersburg
+            </button>
+            <button class="dropdown__city-btn" id="rostov">
+              Rostov-On-Dov
+            </button>
           </div>
         </div>
         <div class="wrapper">
           <div class="enter-data">
+            <button button class="toogle-btn">Switch theme</button>
             <h3 class="title">Enter city name</h3>
             <input class="enter-data__input" type="text" placeholder="Moscow" />
             <button class="enter-data__btn">Search</button>
           </div>
-
           <div class="weather-data">
             <div class="current-weather">
               <div class="details">
@@ -89,72 +93,69 @@
         </div>
       </div>
 
-            <div class="days-forecast">
-              <h2 class="title">Weather forecast for 5 days</h2>
-              <ul class="weather-cards">
-                <li class="card">
-                  <h3 class="title">2023-06-19</h3>
-                  <img
-                    src="https://openweathermap.org/img/wn/13n@4x.png"
-                    alt="weather icon"
-                  />
-                  <p class="text">Temp: -7°C</p>
-                  <p class="text">Wind: 7 м/с</p>
-                  <p class="text">Humidity: 50%</p>
-                </li>
-                <li class="card">
-                  <h3 class="title">2023-06-19</h3>
-                  <img
-                    src="https://openweathermap.org/img/wn/13n@4x.png"
-                    alt="weather icon"
-                  />
-                  <p class="text">Temp: -9°C</p>
-                  <p class="text">Wind: 8 м/с</p>
-                  <p class="text">Humidity: 66%</p>
-                </li>
-                <li class="card">
-                  <h3 class="title">2023-06-19</h3>
-                  <img
-                    src="https://openweathermap.org/img/wn/13n@4x.png"
-                    alt="weather icon"
-                  />
-                  <p class="text">Temp: -8°C</p>
-                  <p class="text">Wind: 14 м/с</p>
-                  <p class="text">Humidity: 80%</p>
-                </li>
-                <li class="card">
-                  <h3 class="title">2023-06-19</h3>
-                  <img
-                    src="https://openweathermap.org/img/wn/13n@4x.png"
-                    alt="weather icon"
-                  />
-                  <p class="text">Temp: -6°C</p>
-                  <p class="text">Wind: 11 м/с</p>
-                  <p class="text">Humidity: 74%</p>
-                </li>
-                <li class="card">
-                  <h3 class="title">2023-06-19</h3>
-                  <img
-                    src="https://openweathermap.org/img/wn/13n@4x.png"
-                    alt="weather icon"
-                  />
-                  <p class="text">Temp: -1°C</p>
-                  <p class="text">Wind: 17 м/с</p>
-                  <p class="text">Humidity: 56%</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        
-      </li>
+      <div class="days-forecast">
+        <h2 class="title">Weather forecast for 5 days</h2>
+        <ul class="weather-cards">
+          <li class="card">
+            <h3 class="title">2023-06-19</h3>
+            <img
+              src="https://openweathermap.org/img/wn/13n@4x.png"
+              alt="weather icon"
+            />
+            <p class="text">Temp: -7°C</p>
+            <p class="text">Wind: 7 м/с</p>
+            <p class="text">Humidity: 50%</p>
+          </li>
+          <li class="card">
+            <h3 class="title">2023-06-19</h3>
+            <img
+              src="https://openweathermap.org/img/wn/13n@4x.png"
+              alt="weather icon"
+            />
+            <p class="text">Temp: -9°C</p>
+            <p class="text">Wind: 8 м/с</p>
+            <p class="text">Humidity: 66%</p>
+          </li>
+          <li class="card">
+            <h3 class="title">2023-06-19</h3>
+            <img
+              src="https://openweathermap.org/img/wn/13n@4x.png"
+              alt="weather icon"
+            />
+            <p class="text">Temp: -8°C</p>
+            <p class="text">Wind: 14 м/с</p>
+            <p class="text">Humidity: 80%</p>
+          </li>
+          <li class="card">
+            <h3 class="title">2023-06-19</h3>
+            <img
+              src="https://openweathermap.org/img/wn/13n@4x.png"
+              alt="weather icon"
+            />
+            <p class="text">Temp: -6°C</p>
+            <p class="text">Wind: 11 м/с</p>
+            <p class="text">Humidity: 74%</p>
+          </li>
+          <li class="card">
+            <h3 class="title">2023-06-19</h3>
+            <img
+              src="https://openweathermap.org/img/wn/13n@4x.png"
+              alt="weather icon"
+            />
+            <p class="text">Temp: -1°C</p>
+            <p class="text">Wind: 17 м/с</p>
+            <p class="text">Humidity: 56%</p>
+          </li>
+        </ul>
+      </div>
     </main>
 
-    <script type="module">
+    <!-- <script type="module">
       import Swup from "https://unpkg.com/swup@4?module";
       const swup = new Swup();
-    </script>
+    </script> -->
 
-    <script src="index.js"></script>
-    <script src="settings.js"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="settings.js" type="text/javascript"></script>
   </body>
 </html>

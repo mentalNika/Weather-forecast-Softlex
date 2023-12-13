@@ -39,10 +39,6 @@ const createWeatherCard = (cityName, weatherItem, index) => {
   }
 };
 
-const saveCityToLocalStorage = (cityName) => {
-  localStorage.setItem("cityName", cityName);
-};
-
 const getWeatherDetails = (cityName, latitude, longitude) => {
   const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
   fetch(WEATHER_API_URL)
@@ -71,8 +67,9 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
       });
     })
     .catch(() => {
-      alert("An error occurred while fetching the weather forecast!");
+      alert("Ошибка");
     });
+  saveCityToLocalStorage(cityName);
 };
 const getCityCoordinates = (cityName) => {
   const API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
@@ -86,9 +83,28 @@ const getCityCoordinates = (cityName) => {
       getWeatherDetails(name, lat, lon);
     })
     .catch(() => {
-      alert("An error occurred while fetching the coordinates!");
+      alert("Ошибка");
     });
 };
+
+// Функция для сохранения имени города в localStorage
+const saveCityToLocalStorage = (cityName) => {
+  localStorage.setItem("cityName", cityName);
+};
+
+// Функция для получения имени города из localStorage
+const getCityFromLocalStorage = () => {
+  return localStorage.getItem("cityName");
+};
+
+// При загрузке страницы проверяем наличие города в localStorage
+// Если есть, получаем прогноз погоды для этого города
+window.addEventListener("DOMContentLoaded", () => {
+  const cityName = getCityFromLocalStorage();
+  if (cityName) {
+    getCityCoordinates(cityName);
+  }
+});
 
 // При открытии сайта отображается погода в Москве
 getCityCoordinates("Москва");
