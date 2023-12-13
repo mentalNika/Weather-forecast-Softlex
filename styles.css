@@ -91,7 +91,6 @@ html.is-animating .transition-fade {
 }
 
 .dropdown-content {
-  margin-left: 15px;
   display: none;
   position: absolute;
   background-color: #fff;

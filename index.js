@@ -1,5 +1,38 @@
 const cityInput = document.querySelector(".enter-data__input");
 const searchButton = document.querySelector(".enter-data__btn");
+const body = document.querySelector("body");
+const toggleButton = document.querySelector(".toogle-btn");
+
+// Функция для сохранения выбранной темы в localStorage
+const saveThemeToLocalStorage = (theme) => {
+  localStorage.setItem("theme", theme);
+};
+
+// Функция для получения выбранной темы из localStorage
+const getThemeFromLocalStorage = () => {
+  return localStorage.getItem("theme");
+};
+
+// Проверяем наличие выбранной темы в localStorage
+const savedTheme = getThemeFromLocalStorage();
+
+// Если есть сохраненная тема, применяем ее
+if (savedTheme) {
+  body.classList.add(savedTheme);
+}
+
+// Обработчик события для кнопки переключения темы
+toggleButton.addEventListener("click", () => {
+  body.classList.toggle("dark-theme");
+
+  // Проверяем текущую тему и сохраняем ее в localStorage
+  if (body.classList.contains("dark-theme")) {
+    saveThemeToLocalStorage("dark-theme");
+  } else {
+    saveThemeToLocalStorage("");
+  }
+});
+
 const currentWeatherDiv = document.querySelector(".current-weather");
 const weatherCardsDiv = document.querySelector(".weather-cards");
 
@@ -8,9 +41,9 @@ const createWeatherCard = (cityName, weatherItem, index) => {
   if (index === 0) {
     // HTML для главной погодной карточки
     return `<div class="details">
-                    <h2 class="title">${cityName} (${
+                    <h2 class="title">${cityName} ${
       weatherItem.dt_txt.split(" ")[0]
-    })</h2>
+    }</h2>
                     <p class="text">Temperature: ${(
                       weatherItem.main.temp - 273.15
                     ).toFixed(2)}°C</p>
