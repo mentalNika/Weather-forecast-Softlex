@@ -28,9 +28,6 @@
               viewBox="0 0 1280.000000 813.000000"
               preserveAspectRatio="xMidYMid meet"
             >
-              <metadata>
-                Created by potrace 1.15, written by Peter Selinger 2001-2017
-              </metadata>
               <g
                 transform="translate(0.000000,813.000000) scale(0.100000,-0.100000)"
                 fill="#b1e3d8"
@@ -63,82 +60,87 @@
     </header>
 
     <main id="swup" class="transition-fade container">
-      <div class="dropdown">
-        <button class="dropbtn">Список городов</button>
-        <div class="dropdown-content">
-          <button class="dropdown__city-btn" id="moscow">Moscow</button>
-          <button class="dropdown__city-btn" id="stPetersburg">Saint Petersburg</button>
-          <button class="dropdown__city-btn" id="rostov">Rostov-On-Dov</button>
+      <div class="content">
+        <div class="dropdown">
+          <button class="dropbtn">Список городов</button>
+          <div class="dropdown-content">
+            <button class="dropdown__city-btn" id="moscow">Moscow</button>
+            <button class="dropdown__city-btn" id="stPetersburg">Saint Petersburg</button>
+            <button class="dropdown__city-btn" id="rostov">Rostov-On-Dov</button>
+          </div>
         </div>
-      </div>
-
-        <div class="weather-input">
-          <h3>Enter city name</h3>
-          <input class="city-input" type="text" placeholder="Moscow" />
-          <button class="search-btn">Search</button>
-        </div>
+        <div class="wrapper">
+          <div class="enter-data">
+            <h3 class="title">Enter city name</h3>
+            <input class="enter-data__input" type="text" placeholder="Moscow" />
+            <button class="enter-data__btn">Search</button>
+          </div>
 
           <div class="weather-data">
             <div class="current-weather">
               <div class="details">
-                <h2></h2>
-                <p>Temperature: 19°C</p>
-                <p>Wind: 4 м/с</p>
-                <p>Humidity: 70%</p>
+                <h2 class="title">Moscow</h2>
+                <p class="text">Temperature: 19°C</p>
+                <p class="text">Wind: 4 м/с</p>
+                <p class="text">Humidity: 70%</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
             <div class="days-forecast">
-              <h2>Weather forecast for 5 days</h2>
+              <h2 class="title">Weather forecast for 5 days</h2>
               <ul class="weather-cards">
                 <li class="card">
-                  <h3>2023-06-19</h3>
+                  <h3 class="title">2023-06-19</h3>
                   <img
                     src="https://openweathermap.org/img/wn/13n@4x.png"
                     alt="weather icon"
                   />
-                  <p>Temp: -7°C</p>
-                  <p>Wind: 7 м/с</p>
-                  <p>Humidity: 50%</p>
+                  <p class="text">Temp: -7°C</p>
+                  <p class="text">Wind: 7 м/с</p>
+                  <p class="text">Humidity: 50%</p>
                 </li>
                 <li class="card">
-                  <h3>2023-06-19</h3>
+                  <h3 class="title">2023-06-19</h3>
                   <img
                     src="https://openweathermap.org/img/wn/13n@4x.png"
                     alt="weather icon"
                   />
-                  <p>Temp: -9°C</p>
-                  <p>Wind: 8 м/с</p>
-                  <p>Humidity: 66%</p>
+                  <p class="text">Temp: -9°C</p>
+                  <p class="text">Wind: 8 м/с</p>
+                  <p class="text">Humidity: 66%</p>
                 </li>
                 <li class="card">
-                  <h3>2023-06-19</h3>
+                  <h3 class="title">2023-06-19</h3>
                   <img
                     src="https://openweathermap.org/img/wn/13n@4x.png"
                     alt="weather icon"
                   />
-                  <p>Temp: -8°C</p>
-                  <p>Wind: 14 м/с</p>
-                  <p>Humidity: 80%</p>
+                  <p class="text">Temp: -8°C</p>
+                  <p class="text">Wind: 14 м/с</p>
+                  <p class="text">Humidity: 80%</p>
                 </li>
                 <li class="card">
-                  <h3>2023-06-19</h3>
+                  <h3 class="title">2023-06-19</h3>
                   <img
                     src="https://openweathermap.org/img/wn/13n@4x.png"
                     alt="weather icon"
                   />
-                  <p>Temp: -6°C</p>
-                  <p>Wind: 11 м/с</p>
-                  <p>Humidity: 74%</p>
+                  <p class="text">Temp: -6°C</p>
+                  <p class="text">Wind: 11 м/с</p>
+                  <p class="text">Humidity: 74%</p>
                 </li>
                 <li class="card">
-                  <h3>2023-06-19</h3>
+                  <h3 class="title">2023-06-19</h3>
                   <img
                     src="https://openweathermap.org/img/wn/13n@4x.png"
                     alt="weather icon"
                   />
-                  <p>Temp: -1°C</p>
-                  <p>Wind: 17 м/с</p>
-                  <p>Humidity: 56%</p>
+                  <p class="text">Temp: -1°C</p>
+                  <p class="text">Wind: 17 м/с</p>
+                  <p class="text">Humidity: 56%</p>
                 </li>
               </ul>
             </div>

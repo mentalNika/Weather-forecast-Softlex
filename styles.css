@@ -27,7 +27,7 @@ html.is-animating .transition-fade {
 
 .header__list {
   margin-top: 50px;
-  padding: 20px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,6 +65,11 @@ html.is-animating .transition-fade {
     rgb(96, 174, 176),
     rgb(55, 108, 178)
   );
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .dropbtn {
@@ -121,4 +126,53 @@ html.is-animating .transition-fade {
   font-weight: 600;
   cursor: pointer;
   border-radius: 20px;
+}
+
+.enter-data__title {
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.enter-data__input {
+  margin: 10px 10px 10px 0;
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+.enter-data__input::placeholder {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  opacity: 0.4;
+}
+
+.enter-data__btn {
+  padding: 10px;
+  background-color: rgb(84, 152, 155);
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.title {
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.text {
+  padding: 10px;
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600;
 }

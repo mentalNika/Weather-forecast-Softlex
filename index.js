@@ -1,5 +1,5 @@
-const cityInput = document.querySelector(".city-input");
-const searchButton = document.querySelector(".search-btn");
+const cityInput = document.querySelector(".enter-data__input");
+const searchButton = document.querySelector(".enter-data__btn");
 const currentWeatherDiv = document.querySelector(".current-weather");
 const weatherCardsDiv = document.querySelector(".weather-cards");
 
@@ -8,31 +8,33 @@ const createWeatherCard = (cityName, weatherItem, index) => {
   if (index === 0) {
     // HTML для главной погодной карточки
     return `<div class="details">
-                    <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
-                    <h6>Temperature: ${(weatherItem.main.temp - 273.15).toFixed(
-                      2
-                    )}°C</h6>
-                    <h6>Wind: ${weatherItem.wind.speed} м/с</h6>
-                    <h6>Humidity: ${weatherItem.main.humidity}%</h6>
+                    <h2 class="title">${cityName} (${
+      weatherItem.dt_txt.split(" ")[0]
+    })</h2>
+                    <p class="text">Temperature: ${(
+                      weatherItem.main.temp - 273.15
+                    ).toFixed(2)}°C</p>
+                    <p class="text">Wind: ${weatherItem.wind.speed} м/с</p>
+                    <p class="text">Humidity: ${weatherItem.main.humidity}%</p>
                 </div>
                 <div class="icon">
                     <img src="https://openweathermap.org/img/wn/${
                       weatherItem.weather[0].icon
                     }@4x.png" alt="weather-icon">
-                    <h6>${weatherItem.weather[0].description}</h6>
+                    <p class="text">${weatherItem.weather[0].description}</p>
                 </div>`;
   } else {
     // HTML для 5-и погодных карточек
     return `<li class="card">
-                    <h3>(${weatherItem.dt_txt.split(" ")[0]})</h3>
+                    <h3 class="title">(${weatherItem.dt_txt.split(" ")[0]})</h3>
                     <img src="https://openweathermap.org/img/wn/${
                       weatherItem.weather[0].icon
                     }@4x.png" alt="weather-icon">
-                    <h6>Temp: ${(weatherItem.main.temp - 273.15).toFixed(
-                      2
-                    )}°C</h6>
-                    <h6>Wind: ${weatherItem.wind.speed} м/с</h6>
-                    <h6>Humidity: ${weatherItem.main.humidity}%</h6>
+                    <p class="text">Temp: ${(
+                      weatherItem.main.temp - 273.15
+                    ).toFixed(2)}°C</p>
+                    <p class="text">Wind: ${weatherItem.wind.speed} м/с</p>
+                    <p class="text">Humidity: ${weatherItem.main.humidity}%</p>
                 </li>`;
   }
 };
