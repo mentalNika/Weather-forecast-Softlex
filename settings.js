@@ -1,4 +1,4 @@
-// const body = document.querySelector("body");
+const body = document.querySelector("body");
 const toggleButton = document.querySelector(".toogle-btn");
 
 toggleButton.addEventListener("click", () => {

@@ -1,7 +1,7 @@
 const cityInput = document.querySelector(".enter-data__input");
 const searchButton = document.querySelector(".enter-data__btn");
 const body = document.querySelector("body");
-const toggleButton = document.querySelector(".toogle-btn");
+const button = document.querySelector(".toogle-btn");
 
 // Функция для сохранения выбранной темы в localStorage
 const saveThemeToLocalStorage = (theme) => {
@@ -22,7 +22,7 @@ if (savedTheme) {
 }
 
 // Обработчик события для кнопки переключения темы
-toggleButton.addEventListener("click", () => {
+button.addEventListener("click", () => {
   body.classList.toggle("dark-theme");
 
   // Проверяем текущую тему и сохраняем ее в localStorage
