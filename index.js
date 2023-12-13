@@ -9,11 +9,11 @@ const createWeatherCard = (cityName, weatherItem, index) => {
     // HTML для главной погодной карточки
     return `<div class="details">
                     <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
-                    <h6>Температура: ${(weatherItem.main.temp - 273.15).toFixed(
+                    <h6>Temperature: ${(weatherItem.main.temp - 273.15).toFixed(
                       2
                     )}°C</h6>
-                    <h6>Ветер: ${weatherItem.wind.speed} м/с</h6>
-                    <h6>Влажность: ${weatherItem.main.humidity}%</h6>
+                    <h6>Wind: ${weatherItem.wind.speed} м/с</h6>
+                    <h6>Humidity: ${weatherItem.main.humidity}%</h6>
                 </div>
                 <div class="icon">
                     <img src="https://openweathermap.org/img/wn/${
@@ -28,14 +28,19 @@ const createWeatherCard = (cityName, weatherItem, index) => {
                     <img src="https://openweathermap.org/img/wn/${
                       weatherItem.weather[0].icon
                     }@4x.png" alt="weather-icon">
-                    <h6>Темп: ${(weatherItem.main.temp - 273.15).toFixed(
+                    <h6>Temp: ${(weatherItem.main.temp - 273.15).toFixed(
                       2
                     )}°C</h6>
-                    <h6>Ветер: ${weatherItem.wind.speed} м/с</h6>
-                    <h6>Влажность: ${weatherItem.main.humidity}%</h6>
+                    <h6>Wind: ${weatherItem.wind.speed} м/с</h6>
+                    <h6>Humidity: ${weatherItem.main.humidity}%</h6>
                 </li>`;
   }
 };
+
+const saveCityToLocalStorage = (cityName) => {
+  localStorage.setItem("cityName", cityName);
+};
+
 const getWeatherDetails = (cityName, latitude, longitude) => {
   const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
   fetch(WEATHER_API_URL)
@@ -49,7 +54,7 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
           return uniqueForecastDays.push(forecastDate);
         }
       });
-      // Очистить старую инфу о погоду
+      // Очистить старую инфу о погоде
       cityInput.value = "";
       currentWeatherDiv.innerHTML = "";
       weatherCardsDiv.innerHTML = "";
@@ -70,7 +75,7 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
 const getCityCoordinates = (cityName) => {
   const API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
-  // Get entered city coordinates (latitude, longitude, and name) from the API response
+  // Получение данных о погоде
   fetch(API_URL)
     .then((response) => response.json())
     .then((data) => {

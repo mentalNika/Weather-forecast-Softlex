@@ -19,4 +19,106 @@ html.is-animating .transition-fade {
   font-family: "Nunito", Arial, Helvetica, sans-serif;
 }
 
-/* НЕ МОЙ */
+.page {
+  margin: 0 auto;
+  max-width: 1000px;
+  border-radius: 40px;
+}
+
+.header__list {
+  margin-top: 50px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(239, 252, 249);
+  border-radius: 40px 40px 0 0;
+}
+
+.header__link {
+  color: #000;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.header__link:hover {
+  border-bottom: 2px rgb(177, 227, 216) solid;
+}
+
+.container {
+  padding: 30px;
+  background: -webkit-linear-gradient(
+    135deg,
+    rgb(177, 227, 216),
+    rgb(96, 174, 176),
+    rgb(55, 108, 178)
+  );
+  background: -moz-linear-gradient(
+    135deg,
+    rgb(177, 227, 216),
+    rgb(96, 174, 176),
+    rgb(55, 108, 178)
+  );
+  background: linear-gradient(
+    135deg,
+    rgb(177, 227, 216),
+    rgb(96, 174, 176),
+    rgb(55, 108, 178)
+  );
+}
+
+.dropbtn {
+  background-color: rgb(96, 174, 176);
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 15px;
+  font-size: 25px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  margin-left: 10px;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content button:hover {
+  background-color: rgb(207, 236, 238);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius: 40px;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(84, 152, 155);
+}
+
+.dropdown__city-btn {
+  width: 100%;
+  background-color: white;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 20px;
+}
