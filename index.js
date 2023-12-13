@@ -18,7 +18,7 @@ const createWeatherCard = (cityName, weatherItem, index) => {
                     <p class="text">Humidity: ${weatherItem.main.humidity}%</p>
                 </div>
                 <div class="icon">
-                    <img src="https://openweathermap.org/img/wn/${
+                    <img class="weather-img" src="https://openweathermap.org/img/wn/${
                       weatherItem.weather[0].icon
                     }@4x.png" alt="weather-icon">
                     <p class="text">${weatherItem.weather[0].description}</p>
@@ -26,8 +26,8 @@ const createWeatherCard = (cityName, weatherItem, index) => {
   } else {
     // HTML для 5-и погодных карточек
     return `<li class="card">
-                    <h3 class="title">(${weatherItem.dt_txt.split(" ")[0]})</h3>
-                    <img src="https://openweathermap.org/img/wn/${
+                    <h3 class="title">${weatherItem.dt_txt.split(" ")[0]}</h3>
+                    <img class="weather-img" src="https://openweathermap.org/img/wn/${
                       weatherItem.weather[0].icon
                     }@4x.png" alt="weather-icon">
                     <p class="text">Temp: ${(

@@ -46,6 +46,7 @@ html.is-animating .transition-fade {
 }
 
 .container {
+  margin-bottom: 50px;
   padding: 30px;
   background: -webkit-linear-gradient(
     135deg,
@@ -65,6 +66,7 @@ html.is-animating .transition-fade {
     rgb(96, 174, 176),
     rgb(55, 108, 178)
   );
+  border-radius: 0 0 20px 20px;
 }
 
 .content {
@@ -78,6 +80,7 @@ html.is-animating .transition-fade {
   color: white;
   padding: 15px;
   font-size: 25px;
+  font-weight: 600;
   border: none;
   border-radius: 40px;
   cursor: pointer;
@@ -89,7 +92,7 @@ html.is-animating .transition-fade {
 }
 
 .dropdown-content {
-  margin-left: 10px;
+  margin-left: 15px;
   display: none;
   position: absolute;
   background-color: #fff;
@@ -128,13 +131,6 @@ html.is-animating .transition-fade {
   border-radius: 20px;
 }
 
-.enter-data__title {
-  padding-bottom: 10px;
-  font-size: 30px;
-  font-weight: 600;
-  color: #fff;
-}
-
 .enter-data__input {
   margin: 10px 10px 10px 0;
   padding: 10px;
@@ -161,6 +157,16 @@ html.is-animating .transition-fade {
   font-size: 25px;
   font-weight: 600;
   border-radius: 20px;
+  cursor: pointer;
+}
+
+.enter-data__btn:hover {
+  background-color: rgb(78, 141, 145);
+}
+
+.weather-img {
+  width: 150px;
+  height: 150px;
 }
 
 .title {
@@ -170,9 +176,36 @@ html.is-animating .transition-fade {
   color: #fff;
 }
 
+.weather-data {
+  text-align: center;
+}
+
 .text {
   padding: 10px;
   font-size: 25px;
   color: #fff;
   font-weight: 600;
+}
+
+.days-forecast {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 30px;
+  max-width: 400px;
+  background-color: rgb(98, 170, 175);
+  border-radius: 20px;
+}
+
+.dark-theme {
+  color: #fff;
+  background: #000;
+}
+
+.dark-theme a {
+  color: #fff;
 }
